@@ -88,22 +88,23 @@ h1 {
 /* Profile image and description. */
 
 #intro {
-  padding-top: 1em;
   display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 #intro-text {
-  width: 40em;
-  float: left;
+  flex: 1;
 }
 
 #intro-image {
-  margin: 5em 0 0 2em;
   width: 30%;
+  height: auto;
 }
 
 #intro-image img {
   width: 100%;
+  border-radius: 5px;
 }
 
 /**************************************************/
