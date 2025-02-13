@@ -9,107 +9,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
+    <!-- Isotope JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
   </head>
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Qiayuan Liao
-                </p>
-                <p>
-                  I'm a second-year Ph.D. student at <a href="https://hybrid-robotics.berkeley.edu/">Hybrid Robotics</a>, UC Berkeley, advised by <a href="https://me.berkeley.edu/people/koushil-sreenath/">Prof. Koushil Sreenath</a>.
-                </p>
-                <p>
-                  I'm a full-stack roboticist dedicated to creating systems achieve agile and robust locomotion and manipulation. Toward this goal, I focus on:
-                  (a) <strong>Developing novel machines and actuations</strong>; 
-                  (b) <strong>Combining learning and model-based methods</strong>;
-                  (c) <strong>Co-designing hardware, learning and control</strong>.
-                </p>
-                <p style="text-align:center">
-                  <a href="https://scholar.google.com/citations?hl=en&user=QGpxkvkAAAAJ">Scholar</a> &nbsp;|&nbsp;
-                  <a href="https://github.com/qiayuanl/">Github</a> &nbsp;|&nbsp;
-                  <a href="data/qiayuanl_cv.pdf">CV</a> &nbsp;|&nbsp;
-                  <a href="mailto:qiayuanl@berkeley.edu">Email</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/personal/portait.jpg"><img style="width:100%;max-width:100%;object-fit: cover;" alt="profile photo" src="images/personal/portait.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
+  <body id="body">
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:16px;width:100%;vertical-align:middle">
-              <h2>Research</h2>
-            </td>
-          </tr>
-          </tbody></table>
-          
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:25%;vertical-align:middle">
-                  <div class="one" >
-                      <img src="images/pubs/zakka25mujoco/teaser.jpeg" style="width:100%;max-width:100%; position: absolute;top: 0%">
-                  </div>
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                  <papertitle>MuJoCo Playground</papertitle>
-                  <br>
-                  <br>
-                    Kevin Zakka*, Baruch Tabanpour*, <strong>Qiayuan Liao*</strong>, Mustafa Haiderbhai*, Samuel Holt*, Jing Yuan Luo, Arthur Allshire, Erik Frey, Koushil Sreenath, Lueder A. Kahrs, Carmelo Sferrazza, Yuval Tassa, Pieter Abbeel
-                  <br>
-                  <br>
-                  <em>Under Review</em>
-                  <br>
-                  <br>
-                  <a href="https://playground.mujoco.org/">[Project Page]</a>
-                  <a href="https://playground.mujoco.org/assets/playground_technical_report.pdf">[Paper]</a>
-                  <a href="https://github.com/google-deepmind/mujoco_playground/">[Code]</a>
-                  <br>
-                  <p>A fully open-source framework for robot learning built with MJX, with the express goal of streamlining simulation, training, and sim-to-real transfer onto robots.</p>
-              </td>
-              </tr>
-          </tbody></table>
+    <div id="main">
+      <div id="intro">
+        <div id="intro-text">
+          <h1>Qiayuan Liao</h1>
+          <p>
+            I'm a second-year Ph.D. student at <a href="https://hybrid-robotics.berkeley.edu/">Hybrid Robotics</a>, UC Berkeley, advised by <a href="https://me.berkeley.edu/people/koushil-sreenath/">Prof. Koushil Sreenath</a>.
+            <br>
+            I'm a full-stack roboticist dedicated to creating systems achieve agile and robust locomotion and manipulation. Toward this goal, I focus on:
+                  (a) <b>Developing novel machines and actuations</b>; 
+                  (b) <b>Combining learning and model-based methods</b>;
+                  (c) <b>Co-designing hardware, learning and control</b>.
+            <br>
+            <br>
+            <a href="https://scholar.google.com/citations?hl=en&user=QGpxkvkAAAAJ">Scholar</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://github.com/qiayuanl/">Github</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="data/qiayuanl_cv.pdf">CV</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="mailto:qiayuanl@berkeley.edu">Email</a>
+          </p>
+        </div>
+        <div id="intro-image">
+          <img src="images/personal/portait.jpg">
+        </div>
+      </div>
+  
+      <div id="filters" class="button-group">
+        <!-- <button class="button" data-filter="*">Show All</button> -->
+        <button class="button is-checked" data-filter=".highlight">Highlights</button>
+        <button class="button" data-filter=".publication">Research</button>
+        <!-- <button class="button" data-filter=".talk">Talks</button> -->
+        <button class="button" data-filter=".misc">Misc</button>
+      </div>
+  
+      <div class="grid">
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:20%;vertical-align:middle">
-                <div class="one" >
-                    <video playsinline="" muted="" autoplay="" loop="" src="images/pubs/liao24berkeley/teaser.mp4" style="width:100%;max-width:100%; position: absolute;top: 0%">
-                </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-                <papertitle>Berkeley Humanoid A Research Platform for Learning-based Control</papertitle>
-                <br>
-                <br>
-                  <strong>Qiayuan Liao</strong>, Bike Zhang, Xuanyu Huang, Xiaoyu Huang, Zhongyu Li, Koushil Sreenath
-                <br>
-                <br>
-                <em> International Conference on Robotics and Automation (ICRA), 2025</em>
-                <br>
-                <br>
-                <a href="https://berkeley-humanoid.com/">[Project Page]</a>
-                <a href="https://arxiv.org/abs/2407.21781/">[Paper]</a>
-                <a href="https://github.com/qiayuanl/isaac_berkeley_humanoid/">[Code]</a>
-                <br>
-                <p>We introduce Berkeley Humanoid, a reliable and low-cost mid-scale humanoid research platform for learning-based control.</p>
-            </td>
-            </tr>
-          </tbody></table>
+        <!-- Highlights -->
+        <!-- <div class="list-item highlight description" data-category="highlight">
+          Some recent highlights from our research:
+        </div> -->
 
-          <div id="footer">
-            Website template by <a href="https://andyzeng.github.io/">Andy Zeng</a> and <a
-              href="https://jonbarron.info/">Jon's
-              website</a>.
+        <!-- Preview Videos -->
+        <div class="list-item highlight previews" data-category="highlight">
+
+          <a href="https://berkeley-humanoid.com/"><video class="preview1" playsinline="" muted="" autoplay="" loop=""><source src="images/pubs/liao24berkeley/teaser.mp4" type="video/mp4"></video></a>
+          <a href="https://github.com/qiayuanl/legged_control/"><video class="preview2" playsinline="" muted="" autoplay="" loop=""><source src="images/pubs/leggedcontrol/videoplayback.mp4" type="video/mp4"></video></a>
+          <a href="https://playground.mujoco.org/"><video class="preview3" playsinline="" muted="" autoplay="" loop=""><source src="images/pubs/zakka25mujoco/teaser.mp4" type="video/mp4"></video></a>
+        </div>
+
+        <!-- Truncated Set of Highlights (Shown by Default) -->
+        <div id="main-highlights">
+          <div class="list-item highlight" data-category="highlight">
+            <a href="https://berkeley-humanoid.com/">Berkeley Humanoid</a> got accepted to <b>ICRA 2025</b>
           </div>
-        </td>
-      </tr>
-    </table>
+          <div class="list-item highlight" data-category="highlight">
+            Open-source code <a href="https://github.com/qiayuanl/legged_control/">legged_control</a> got <b>1000+ stars</b> on GitHub
+          </div>
+          <div class="list-item highlight" data-category="highlight">
+            Open-source code <a href="https://playground.mujoco.org/">MuJoCo Playground</a> got <b>600+ stars</b> on GitHub
+          </div>
+        </div>
+        
+        <!-- All Archived Highlights (Click to Show) -->
+        <!-- <div id="more-highlights" style="display: None">
+        </div> -->
+
+        <!-- Toggle highlights button. -->
+        <!-- <div class="list-item highlight toggle-button" data-category="highlight">
+          <a id="toggle_highlights_button" href="javascript:toggle_highlights()">Show more</a>
+        </div> -->
+
+
+        <!-- Publications -->
+        <div class="list-item publication" data-category="publication">
+          <a href="https://playground.mujoco.org/" class="thumbnail">
+            <img src="images/pubs/zakka25mujoco/teaser.jpeg" alt="" />
+          </a>
+          <div class="project-description">
+            <h3><a href="https://playground.mujoco.org/">MuJoCo Playground</a></h3>
+            <p>
+              Kevin Zakka*, Baruch Tabanpour*, <b>Qiayuan Liao*</b>, Mustafa Haiderbhai*, Samuel Holt*, Jing Yuan Luo, Arthur Allshire, Erik Frey, Koushil Sreenath, Lueder A. Kahrs, Carmelo Sferrazza, Yuval Tassa, Pieter Abbeel<br>
+              <i>Under Review</i><br>
+              <a href="https://playground.mujoco.org/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+              <a href="https://playground.mujoco.org/assets/playground_technical_report.pdf">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+              <a href="https://github.com/google-deepmind/mujoco_playground/">Code</a>
+              <br>
+          </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <a href="https://playground.mujoco.org/" class="thumbnail">
+            <video playsinline="" muted="" autoplay="" loop="">
+              <source src="images/pubs/liao24berkeley/teaser.mp4" type="video/mp4">
+            </video>
+          </a>
+          <div class="project-description">
+            <h3><a href="https://berkeley-humanoid.com/">Berkeley Humanoid A Research Platform for Learning-based Control</a></h3>
+            <p>
+              <b>Qiayuan Liao</b>, Bike Zhang, Xuanyu Huang, Xiaoyu Huang, Zhongyu Li, Koushil Sreenath<br>
+              <i>International Conference on Robotics and Automation (ICRA), 2025</i><br>
+              <a href="https://berkeley-humanoid.com/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+              <a href="https://arxiv.org/abs/2407.21781/">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+              <a href="https://github.com/qiayuanl/isaac_berkeley_humanoid/">Code</a>
+              <br>
+            </p>
+          </div>
+        </div>
+
+        <!-- Talks -->
+
+        <!-- Services -->
+
+      </div>
+
+      <div id="footer">
+        Website template by <a href="https://andyzeng.github.io/">Andy Zeng</a> and <a
+          href="https://jonbarron.info/">Jon's
+          website</a>.
+      </div>
+  
+    </div>
+  
+    <script>
+  
+      // Isotope grid.
+      var $grid = $('.grid').isotope({
+        itemSelector: '.list-item',
+        layoutMode: 'fitRows',
+        transitionDuration: 0,
+        stagger: 10,
+        initLayout: false,
+        getSortData: {
+          name: '.name',
+          symbol: '.symbol',
+          number: '.number parseInt',
+          category: '[data-category]',
+          weight: function (itemElem) {
+            var weight = $(itemElem).find('.weight').text();
+            return parseFloat(weight.replace(/[\(\)]/g, ''));
+          }
+        }
+      });
+  
+      // Bind filter button click.
+      $('#filters').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
+        localStorage.setItem('filterValue', filterValue);
+        $grid.isotope({ filter: filterValue });
+      });
+  
+      // Change is-checked class on buttons.
+      $('.button-group').each(function (i, buttonGroup) {
+        var $buttonGroup = $(buttonGroup);
+        $buttonGroup.on('click', 'button', function () {
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          $(this).addClass('is-checked');
+        });
+      });
+  
+      function update_isotope() {
+        // Retrieve cached button click.
+        var defaultFilterValue = localStorage.getItem('filterValue');
+        if (defaultFilterValue == null) {
+          defaultFilterValue = ".highlight"
+        }
+        $grid.isotope({ filter: defaultFilterValue });
+        var buttons = document.getElementsByClassName("button");
+        for (var currButton of buttons) {
+          if (currButton.getAttribute('data-filter') == defaultFilterValue) {
+            currButton.classList.add('is-checked');
+          } else {
+            currButton.classList.remove('is-checked');
+          }
+        }
+      }
+  
+      function toggle_bio() {
+        var x = document.getElementById("more-bio");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+  
+      function toggle_highlights() {
+        var x = document.getElementById("main-highlights");
+        var y = document.getElementById("more-highlights");
+        var b = document.getElementById("toggle_highlights_button")
+        if (y.style.display === "none") {
+          x.style.display = "none";
+          y.style.display = "block";
+          b.innerHTML = "Show less"
+          update_isotope();
+        } else {
+          x.style.display = "block";
+          y.style.display = "none";
+          b.innerHTML = "Show more"
+          update_isotope();
+        }
+      }
+  
+      update_isotope();
+  
+    </script>
   </body>
 </html>
