@@ -54,10 +54,9 @@ table {
 }
 
 #main {
-  width: 54em;
-  margin: 0px auto;
-  position: relative;
-  min-height: 100vh;
+  max-width: 54em;
+  width: 100%;
+  margin:  auto;
 }
 
 a {
