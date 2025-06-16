@@ -57,6 +57,7 @@ table {
   max-width: 54em;
   width: 100%;
   margin:  auto;
+  position: relative;
 }
 
 a {
